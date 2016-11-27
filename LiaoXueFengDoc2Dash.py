@@ -1,7 +1,7 @@
-import os, re, sqlite3
+import os, sqlite3
 
 import shutil
-from bs4 import BeautifulSoup, NavigableString, Tag
+from bs4 import BeautifulSoup
 
 """
 将抓取的廖雪峰的官方网站(http://www.liaoxuefeng.com/)的教程网页转换为Dash文档
