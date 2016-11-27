@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html xmlns:itranswarp="http://www.itranswarp.com/" xmlns:wb="http://open.weibo.com/wb">
+<!--
+-->
+<head>
+<meta charset="utf-8"/>
+<title>操作DOM - 廖雪峰的官方网站</title>
+<meta content="width=device-width" name="viewport"/>
+<meta content="javascript,node,jquery,git,python,java,sql,linux,ios,android,教程,软件,编程,开发,运维,云计算,网络,互联网" name="keywords"/>
+<meta content="研究互联网产品和技术，提供原创中文精品教程" name="description"/>
+<meta content=" /wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000 " property="x-nav"/>
+<link href="/feed" rel="alternate" title="廖雪峰的官方网站" type="application/rss+xml"/>
+<meta content="article" property="og:type"/>
+<meta content="http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434499851683f7f8d6b7717343248a75d5e7f930def4000" property="og:url"/>
+<meta content="操作DOM" property="og:title"/>
+<meta content="迈向全栈工程师之路的JavaScript教程" property="og:description"/>
+<meta content="http://www.liaoxuefeng.com/files/attachments/0014355670304100cdaa4e7e651474d9672ed73797378bd000/l" property="og:image"/>
+<!-- BEGIN CSS COMPRESS -->
+<link href="../../static/themes/default/css/codemirror.css" rel="stylesheet"/>
+<link href="../../static/themes/default/css/highlight.css" rel="stylesheet"/>
+<link href="../../static/themes/default/css/itranswarp.css" rel="stylesheet"/>
+<!-- END CSS COMPRESS -->
+<!--[if lt IE 9]>
+    <link rel="stylesheet" href="/static/themes/default/css/ie.css" />
+    <![endif]-->
+
+
+
+
+
+<style id="x-doc-style">
+
+        .x-display-if-signin { display: none; }
+
+    </style>
+
+<style>
+.x-wiki-visible {
+    display: block;
+}
+</style>
+
+<style>
+.x-center {
+    margin: 0;
+}
+
+
+.x-center {
+    margin-left: 316px;
+    padding-left: 15px;
+}
+
+
+
+
+</style>
+<!-- BEGIN custom_header -->
+
+
+
+
+
+
+
+
+
+
+<!-- END custom_header -->
+</head>
+<body>
+<div class="x-goto-top">
+<div class="x-arrow"></div>
+<div class="x-stick"></div>
+</div>
+<!-- // header -->
+<div id="main">
+
+
+<div class="uk-container x-container">
+<div class="uk-grid">
+<div class="x-body-before uk-width-1-1">
+</div>
+</div>
+<div class="uk-grid">
+<div class="uk-width-1-1">
+<div class="x-sidebar-left">
+<div class="x-sidebar-left-top">
+</div>
+<div class="x-sidebar-left-content">
+<ul class="uk-nav uk-nav-side">
+<li class="uk-nav-header">Index</li>
+</ul>
+<ul class="uk-nav uk-nav-side" style="margin-right:-15px;">
+<li id="001434446689867b27157e896e74d51a89c25cc8b43bdb3000"><a href="../001434446689867b27157e896e74d51a89c25cc8b43bdb3000.html">JavaScript教程</a></li>
+<li id="0014344991049250a2c80ec84cb4861bbd1d9b2c0c2850e000" style="margin-left:1em;">
+<a href="0014344991049250a2c80ec84cb4861bbd1d9b2c0c2850e000.html">JavaScript简介</a>
+</li>
+<li id="00143449917624134f5c4695b524e81a581ab5a222b05ec000" style="margin-left:1em;">
+<a href="00143449917624134f5c4695b524e81a581ab5a222b05ec000.html">快速入门</a>
+</li>
+<li id="00143470025281435e4e03117a74438aaf98c4f7b30b307000" style="margin-left:2em;">
+<a href="00143470025281435e4e03117a74438aaf98c4f7b30b307000.html">基本语法</a>
+</li>
+<li id="001434499190108eec0bdf14e704a09935cd112e501e31a000" style="margin-left:2em;">
+<a href="001434499190108eec0bdf14e704a09935cd112e501e31a000.html">数据类型和变量</a>
+</li>
+<li id="001434499203693072018f8878842a9b0011e3ff4e38b6b000" style="margin-left:2em;">
+<a href="001434499203693072018f8878842a9b0011e3ff4e38b6b000.html">字符串</a>
+</li>
+<li id="00143449921138898cdeb7fc2214dc08c6c67827758cd2f000" style="margin-left:2em;">
+<a href="00143449921138898cdeb7fc2214dc08c6c67827758cd2f000.html">数组</a>
+</li>
+<li id="00143449922400335c44d4b8c904ff29a78fd4334347131000" style="margin-left:2em;">
+<a href="00143449922400335c44d4b8c904ff29a78fd4334347131000.html">对象</a>
+</li>
+<li id="0014345005693811782d9e338994ec19aa1c5325824bc15000" style="margin-left:2em;">
+<a href="0014345005693811782d9e338994ec19aa1c5325824bc15000.html">条件判断</a>
+</li>
+<li id="001434500620831b2aeb535f5e245c788493e9f4ff416c0000" style="margin-left:2em;">
+<a href="001434500620831b2aeb535f5e245c788493e9f4ff416c0000.html">循环</a>
+</li>
+<li id="0014345007434430758e3ac6e1b44b1865178e7aff9082e000" style="margin-left:2em;">
+<a href="0014345007434430758e3ac6e1b44b1865178e7aff9082e000.html">Map和Set</a>
+</li>
+<li id="00143450082788640f82a480be8481a8ce8272951a40970000" style="margin-left:2em;">
+<a href="00143450082788640f82a480be8481a8ce8272951a40970000.html">iterable</a>
+</li>
+<li id="0014344992519683bcfa2e33760462fb5db8eb9430924be000" style="margin-left:1em;">
+<a href="0014344992519683bcfa2e33760462fb5db8eb9430924be000.html">函数</a>
+</li>
+<li id="00143449926746982f181557d9b423f819e89709feabdb4000" style="margin-left:2em;">
+<a href="00143449926746982f181557d9b423f819e89709feabdb4000.html">函数定义和调用</a>
+</li>
+<li id="0014344993159773a464f34e1724700a6d5dd9e235ceb7c000" style="margin-left:2em;">
+<a href="0014344993159773a464f34e1724700a6d5dd9e235ceb7c000.html">变量作用域</a>
+</li>
+<li id="0014345005399057070809cfaa347dfb7207900cfd116fb000" style="margin-left:2em;">
+<a href="0014345005399057070809cfaa347dfb7207900cfd116fb000.html">方法</a>
+</li>
+<li id="001434499355829ead974e550644e2ebd9fd8bb1b0dd721000" style="margin-left:2em;">
+<a href="001434499355829ead974e550644e2ebd9fd8bb1b0dd721000.html">高阶函数</a>
+</li>
+<li id="001435119854495d29b9b3d7028477a96ed74db95032675000" style="margin-left:3em;">
+<a href="001435119854495d29b9b3d7028477a96ed74db95032675000.html">map/reduce</a>
+</li>
+<li id="0014351219769203e3fbe1ed611475db3d439393add8997000" style="margin-left:3em;">
+<a href="0014351219769203e3fbe1ed611475db3d439393add8997000.html">filter</a>
+</li>
+<li id="0014351226817991a9c08f1ec0a45c99b9209bcfc71b8f6000" style="margin-left:3em;">
+<a href="0014351226817991a9c08f1ec0a45c99b9209bcfc71b8f6000.html">sort</a>
+</li>
+<li id="00143449934543461c9d5dfeeb848f5b72bd012e1113d15000" style="margin-left:2em;">
+<a href="00143449934543461c9d5dfeeb848f5b72bd012e1113d15000.html">闭包</a>
+</li>
+<li id="001438565969057627e5435793645b7acaee3b6869d1374000" style="margin-left:2em;">
+<a href="001438565969057627e5435793645b7acaee3b6869d1374000.html">箭头函数</a>
+</li>
+<li id="00143450083887673122b45a4414333ac366c3c935125e7000" style="margin-left:2em;">
+<a href="00143450083887673122b45a4414333ac366c3c935125e7000.html">generator</a>
+</li>
+<li id="00143449957099176f55ba07b764c3daa522217d0e42643000" style="margin-left:1em;">
+<a href="00143449957099176f55ba07b764c3daa522217d0e42643000.html">标准对象</a>
+</li>
+<li id="001434499525761186acdd5ac3a44f8a50cc0ed8606139b000" style="margin-left:2em;">
+<a href="001434499525761186acdd5ac3a44f8a50cc0ed8606139b000.html">Date</a>
+</li>
+<li id="001434499503920bb7b42ff6627420da2ceae4babf6c4f2000" style="margin-left:2em;">
+<a href="001434499503920bb7b42ff6627420da2ceae4babf6c4f2000.html">RegExp</a>
+</li>
+<li id="001434499490767fe5a0e31e17e44b69dcd1196f7ec6fc6000" style="margin-left:2em;">
+<a href="001434499490767fe5a0e31e17e44b69dcd1196f7ec6fc6000.html">JSON</a>
+</li>
+<li id="001434499763408e24c210985d34edcabbca944b4239e20000" style="margin-left:1em;">
+<a href="001434499763408e24c210985d34edcabbca944b4239e20000.html">面向对象编程</a>
+</li>
+<li id="0014344997235247b53be560ab041a7b10360a567422a78000" style="margin-left:2em;">
+<a href="0014344997235247b53be560ab041a7b10360a567422a78000.html">创建对象</a>
+</li>
+<li id="0014344997013405abfb7f0e1904a04ba6898a384b1e925000" style="margin-left:2em;">
+<a href="0014344997013405abfb7f0e1904a04ba6898a384b1e925000.html">原型继承</a>
+</li>
+<li id="001458267339633fd3a83c597d04b5fb59f7d1f6792efb3000" style="margin-left:2em;">
+<a href="001458267339633fd3a83c597d04b5fb59f7d1f6792efb3000.html">class继承</a>
+</li>
+<li id="0014344997647015f03abc1bb5f46129a7526292a12ab26000" style="margin-left:1em;">
+<a href="0014344997647015f03abc1bb5f46129a7526292a12ab26000.html">浏览器</a>
+</li>
+<li id="001434499832124d97d77b00706461f9daf1a390b75ade1000" style="margin-left:2em;">
+<a href="001434499832124d97d77b00706461f9daf1a390b75ade1000.html">浏览器对象</a>
+</li>
+<li id="001434499851683f7f8d6b7717343248a75d5e7f930def4000" style="margin-left:2em;">
+<a href="001434499851683f7f8d6b7717343248a75d5e7f930def4000.html">操作DOM</a>
+</li>
+<li id="0014345011220342fa37b4a62ea4972bf9e6da10edc2a85000" style="margin-left:3em;">
+<a href="0014345011220342fa37b4a62ea4972bf9e6da10edc2a85000.html">更新DOM</a>
+</li>
+<li id="0014359940861047248456754f44e55919fe9370c723ae6000" style="margin-left:3em;">
+<a href="0014359940861047248456754f44e55919fe9370c723ae6000.html">插入DOM</a>
+</li>
+<li id="001435997163473d309006809fa43abbba322be3eb090a8000" style="margin-left:3em;">
+<a href="001435997163473d309006809fa43abbba322be3eb090a8000.html">删除DOM</a>
+</li>
+<li id="001434499922277b890fd537901490a84fc24b2b8b8867e000" style="margin-left:2em;">
+<a href="001434499922277b890fd537901490a84fc24b2b8b8867e000.html">操作表单</a>
+</li>
+<li id="00143449993875172bbfac4b9764e2d9e2b5a17c706b3db000" style="margin-left:2em;">
+<a href="00143449993875172bbfac4b9764e2d9e2b5a17c706b3db000.html">操作文件</a>
+</li>
+<li id="001434499861493e7c35be5e0864769a2c06afb4754acc6000" style="margin-left:2em;">
+<a href="001434499861493e7c35be5e0864769a2c06afb4754acc6000.html">AJAX</a>
+</li>
+<li id="0014345008539155e93fc16046d4bb7854943814c4f9dc2000" style="margin-left:2em;">
+<a href="0014345008539155e93fc16046d4bb7854943814c4f9dc2000.html">Promise</a>
+</li>
+<li id="00143449990549914b596ac1da54a228a6fa9643e88bc0c000" style="margin-left:2em;">
+<a href="00143449990549914b596ac1da54a228a6fa9643e88bc0c000.html">Canvas</a>
+</li>
+<li id="001434499993118b8173572625b4afe93a8b19dd707ea1d000" style="margin-left:1em;">
+<a href="001434499993118b8173572625b4afe93a8b19dd707ea1d000.html">jQuery</a>
+</li>
+<li id="0014345004443979a29e0e0be054e75a652613f132f7f0b000" style="margin-left:2em;">
+<a href="0014345004443979a29e0e0be054e75a652613f132f7f0b000.html">选择器</a>
+</li>
+<li id="001437023139167510b90eb2c924f72aeba0db592a9eb54000" style="margin-left:3em;">
+<a href="001437023139167510b90eb2c924f72aeba0db592a9eb54000.html">层级选择器</a>
+</li>
+<li id="0014370268753868fc999e1563341fcb9df078b160a20e5000" style="margin-left:3em;">
+<a href="0014370268753868fc999e1563341fcb9df078b160a20e5000.html">查找和过滤</a>
+</li>
+<li id="001434500494451273e6b3dec9d411d9ba841dee8caec45000" style="margin-left:2em;">
+<a href="001434500494451273e6b3dec9d411d9ba841dee8caec45000.html">操作DOM</a>
+</li>
+<li id="001437110841551950380fdc17c4abdaebd38363dbe2348000" style="margin-left:3em;">
+<a href="001437110841551950380fdc17c4abdaebd38363dbe2348000.html">修改DOM结构</a>
+</li>
+<li id="00143564690172894383ccd7ab64669b4971f4b03fa342d000" style="margin-left:2em;">
+<a href="00143564690172894383ccd7ab64669b4971f4b03fa342d000.html">事件</a>
+</li>
+<li id="001434500456006abd6381dc3bb439d932cb895b62d9eee000" style="margin-left:2em;">
+<a href="001434500456006abd6381dc3bb439d932cb895b62d9eee000.html">动画</a>
+</li>
+<li id="00143450046645491e306a4f74746daaef4d172f66335b5000" style="margin-left:2em;">
+<a href="00143450046645491e306a4f74746daaef4d172f66335b5000.html">AJAX</a>
+</li>
+<li id="0014356468967974219593d94f64d06b370c87fc38eade4000" style="margin-left:2em;">
+<a href="0014356468967974219593d94f64d06b370c87fc38eade4000.html">扩展</a>
+</li>
+<li id="001450370530539bc6e0e3dc02c4d3bb79993a8cde056b5000" style="margin-left:1em;">
+<a href="001450370530539bc6e0e3dc02c4d3bb79993a8cde056b5000.html">underscore</a>
+</li>
+<li id="001450372452505599881a3debd4becbe1591a94950fbb8000" style="margin-left:2em;">
+<a href="001450372452505599881a3debd4becbe1591a94950fbb8000.html">Collections</a>
+</li>
+<li id="001450375778335b78230044e114619bb4211c3769897a7000" style="margin-left:2em;">
+<a href="001450375778335b78230044e114619bb4211c3769897a7000.html">Arrays</a>
+</li>
+<li id="001450391119558965d1614860145b881340e490534c5c3000" style="margin-left:2em;">
+<a href="001450391119558965d1614860145b881340e490534c5c3000.html">Functions</a>
+</li>
+<li id="0014504059891467b6dacbe5960461983d2c0a8d423d037000" style="margin-left:2em;">
+<a href="0014504059891467b6dacbe5960461983d2c0a8d423d037000.html">Objects</a>
+</li>
+<li id="001450409116077b5e000f9cb57448785b181b0939caecd000" style="margin-left:2em;">
+<a href="001450409116077b5e000f9cb57448785b181b0939caecd000.html">Chaining</a>
+</li>
+<li id="001434501245426ad4b91f2b880464ba876a8e3043fc8ef000" style="margin-left:1em;">
+<a href="001434501245426ad4b91f2b880464ba876a8e3043fc8ef000.html">Node.js</a>
+</li>
+<li id="00143450141843488beddae2a1044cab5acb5125baf0882000" style="margin-left:2em;">
+<a href="00143450141843488beddae2a1044cab5acb5125baf0882000.html">安装Node.js和npm</a>
+</li>
+<li id="001434501436552e03ec6cc152b4c84959f14d0ea278488000" style="margin-left:2em;">
+<a href="001434501436552e03ec6cc152b4c84959f14d0ea278488000.html">第一个Node程序</a>
+</li>
+<li id="001470969077294a6455fc9cd1f48b69f82cd05e7fa9b40000" style="margin-left:2em;">
+<a href="001470969077294a6455fc9cd1f48b69f82cd05e7fa9b40000.html">搭建Node开发环境</a>
+</li>
+<li id="001434502419592fd80bbb0613a42118ccab9435af408fd000" style="margin-left:2em;">
+<a href="001434502419592fd80bbb0613a42118ccab9435af408fd000.html">模块</a>
+</li>
+<li id="001434501482448f6b36071ab6949d3a7ecb5a71a3c9df9000" style="margin-left:2em;">
+<a href="001434501482448f6b36071ab6949d3a7ecb5a71a3c9df9000.html">基本模块</a>
+</li>
+<li id="001434501497361a4e77c055f5c4a8da2d5a1868df36ad1000" style="margin-left:3em;">
+<a href="001434501497361a4e77c055f5c4a8da2d5a1868df36ad1000.html">fs</a>
+</li>
+<li id="001434501515527e6fce6d5ec4b4fd9b572122cd1ec8ded000" style="margin-left:3em;">
+<a href="001434501515527e6fce6d5ec4b4fd9b572122cd1ec8ded000.html">stream</a>
+</li>
+<li id="0014345015296018cac40c198b543fead5c549865b9bd4a000" style="margin-left:3em;">
+<a href="0014345015296018cac40c198b543fead5c549865b9bd4a000.html">http</a>
+</li>
+<li id="001434501504929883d11d84a1541c6907eefd792c0da51000" style="margin-left:3em;">
+<a href="001434501504929883d11d84a1541c6907eefd792c0da51000.html">crypto</a>
+</li>
+<li id="001434501549492cdf5d4013db14fa9ad8ca172f0664345000" style="margin-left:2em;">
+<a href="001434501549492cdf5d4013db14fa9ad8ca172f0664345000.html">Web开发</a>
+</li>
+<li id="001434501579966ab03decb0dd246e1a6799dd653a15e1b000" style="margin-left:3em;">
+<a href="001434501579966ab03decb0dd246e1a6799dd653a15e1b000.html">koa</a>
+</li>
+<li id="001471087582981d6c0ea265bf241b59a04fa6f61d767f6000" style="margin-left:4em;">
+<a href="001471087582981d6c0ea265bf241b59a04fa6f61d767f6000.html">koa入门</a>
+</li>
+<li id="001471133885340dad9058705804899b1cc2d0a10e7dc80000" style="margin-left:4em;">
+<a href="001471133885340dad9058705804899b1cc2d0a10e7dc80000.html">处理URL</a>
+</li>
+<li id="0014713964925087c29166d8c344a949364e40e2f28dc09000" style="margin-left:4em;">
+<a href="0014713964925087c29166d8c344a949364e40e2f28dc09000.html">使用Nunjucks</a>
+</li>
+<li id="001434501628911140e1cb6ce7d42e5af81480f7ecd5802000" style="margin-left:4em;">
+<a href="001434501628911140e1cb6ce7d42e5af81480f7ecd5802000.html">使用MVC</a>
+</li>
+<li id="00143450161807565b0c93cb65d4df0a733bf15dc1f8c79000" style="margin-left:3em;">
+<a href="00143450161807565b0c93cb65d4df0a733bf15dc1f8c79000.html">mysql</a>
+</li>
+<li id="001471955049232be7492e76f514d45a2180e2c224eb7a6000" style="margin-left:4em;">
+<a href="001471955049232be7492e76f514d45a2180e2c224eb7a6000.html">使用Sequelize</a>
+</li>
+<li id="001472286125147031e735933574ae099842afd31be80d1000" style="margin-left:4em;">
+<a href="001472286125147031e735933574ae099842afd31be80d1000.html">建立Model</a>
+</li>
+<li id="00147203593334596b366f3fe0b409fbc30ad81a0a91c4a000" style="margin-left:3em;">
+<a href="00147203593334596b366f3fe0b409fbc30ad81a0a91c4a000.html">mocha</a>
+</li>
+<li id="00147204317563462840426beb04a849ba813eb46bb347c000" style="margin-left:4em;">
+<a href="00147204317563462840426beb04a849ba813eb46bb347c000.html">编写测试</a>
+</li>
+<li id="0014723007105817ff3d8fae5b9491a88982aa1655e66be000" style="margin-left:4em;">
+<a href="0014723007105817ff3d8fae5b9491a88982aa1655e66be000.html">异步测试</a>
+</li>
+<li id="001472780997905c8f293615c5a42eab058b6dc29936a5c000" style="margin-left:3em;">
+<a href="001472780997905c8f293615c5a42eab058b6dc29936a5c000.html">WebSocket</a>
+</li>
+<li id="0014727922914053479c966220f47da91991fa9c27ac3ea000" style="margin-left:4em;">
+<a href="0014727922914053479c966220f47da91991fa9c27ac3ea000.html">使用ws</a>
+</li>
+<li id="001472794708264206fcf1589bb43caa0395752aa26538c000" style="margin-left:4em;">
+<a href="001472794708264206fcf1589bb43caa0395752aa26538c000.html">编写聊天室</a>
+</li>
+<li id="001473590199114b8523ba038dd4359a16ad0bbd3c8a1f2000" style="margin-left:3em;">
+<a href="001473590199114b8523ba038dd4359a16ad0bbd3c8a1f2000.html">REST</a>
+</li>
+<li id="0014735914606943e2866257aa644b4bdfe01d26d29960b000" style="margin-left:4em;">
+<a href="0014735914606943e2866257aa644b4bdfe01d26d29960b000.html">编写REST API</a>
+</li>
+<li id="0014735944539193ab2edd2740f44a79efb438a05e83727000" style="margin-left:4em;">
+<a href="0014735944539193ab2edd2740f44a79efb438a05e83727000.html">开发REST API</a>
+</li>
+<li id="001475449022563a6591e6373324d1abd93e0e3fa04397f000" style="margin-left:3em;">
+<a href="001475449022563a6591e6373324d1abd93e0e3fa04397f000.html">MVVM</a>
+</li>
+<li id="0014757105098309140e608db714251bf071db711a9d183000" style="margin-left:4em;">
+<a href="0014757105098309140e608db714251bf071db711a9d183000.html">单向绑定</a>
+</li>
+<li id="00147574857851718682c42639f466a934ad9d4f485d1f2000" style="margin-left:4em;">
+<a href="00147574857851718682c42639f466a934ad9d4f485d1f2000.html">双向绑定</a>
+</li>
+<li id="0014757513445737513d7d65cd64333b5b6ba772839e401000" style="margin-left:4em;">
+<a href="0014757513445737513d7d65cd64333b5b6ba772839e401000.html">同步DOM结构</a>
+</li>
+<li id="00147576011615487c65971b3bd4acfa8ee94baaab3dbf7000" style="margin-left:4em;">
+<a href="00147576011615487c65971b3bd4acfa8ee94baaab3dbf7000.html">集成API</a>
+</li>
+<li id="0014757971662334e405bae72894f5c88a4bc75d01406da000" style="margin-left:4em;">
+<a href="0014757971662334e405bae72894f5c88a4bc75d01406da000.html">在线电子表格</a>
+</li>
+<li id="001434502089103cfd7d8160b6341d280499f541f430b64000" style="margin-left:2em;">
+<a href="001434502089103cfd7d8160b6341d280499f541f430b64000.html">自动化工具</a>
+</li>
+<li id="0014702883533702219013a10964054bd9a7c322b1c7e9c000" style="margin-left:1em;">
+<a href="0014702883533702219013a10964054bd9a7c322b1c7e9c000.html">React</a>
+</li>
+<li id="001434502446010ad7a7602d71b49c9a3a0b8484f88f2cd000" style="margin-left:1em;">
+<a href="001434502446010ad7a7602d71b49c9a3a0b8484f88f2cd000.html">期末总结</a>
+</li>
+</ul>
+<div class="x-placeholder"></div>
+</div>
+<div class="x-sidebar-left-bottom">
+<h3>关于作者</h3>
+<iframe class="share_self" frameborder="0" height="90" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&amp;width=0&amp;height=550&amp;fansRow=2&amp;ptype=1&amp;speed=0&amp;skin=5&amp;isTitle=0&amp;noborder=0&amp;isWeibo=0&amp;isFans=0&amp;uid=1658384301&amp;verifier=078cedea&amp;colors=0593d3,ffffff,666666,0593d3,0477ab&amp;dpc=1" width="100%"></iframe>
+<div class="x-promo-b" style="width:100%;overflow-x:hidden;margin-bottom:5px"></div>
+<div style="width:100%;overflow-x:hidden;">
+
+<!-- 300x600-lxf -->
+
+
+</div>
+<div style="width:100%;overflow-x:hidden;">
+
+
+</div>
+</div>
+</div>
+<div class="x-center">
+<div>
+</div>
+<div class="x-content" style="width:100%">
+<h4>操作DOM</h4>
+
+<hr/>
+<div class="x-wiki-content">
+<p>由于HTML文档被浏览器解析后就是一棵DOM树，要改变HTML的结构，就需要通过JavaScript来操作DOM。</p>
+<p>始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：</p>
+<ul>
+<li><p>更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容；</p>
+</li>
+<li><p>遍历：遍历该DOM节点下的子节点，以便进行进一步操作；</p>
+</li>
+<li><p>添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点；</p>
+</li>
+<li><p>删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。</p>
+</li>
+</ul>
+<p>在操作一个DOM节点前，我们需要通过各种方式先拿到这个DOM节点。最常用的方法是<code>document.getElementById()</code>和<code>document.getElementsByTagName()</code>，以及CSS选择器<code>document.getElementsByClassName()</code>。</p>
+<p>由于ID在HTML文档中是唯一的，所以<code>document.getElementById()</code>可以直接定位唯一的一个DOM节点。<code>document.getElementsByTagName()</code>和<code>document.getElementsByClassName()</code>总是返回一组DOM节点。要精确地选择DOM，可以先定位父节点，再从父节点开始选择，以缩小范围。</p>
+<p>例如：</p>
+<pre><code>// 返回ID为'test'的节点：
+var test = document.getElementById('test');
+
+// 先定位ID为'test-table'的节点，再返回其内部所有tr节点：
+var trs = document.getElementById('test-table').getElementsByTagName('tr');
+
+// 先定位ID为'test-div'的节点，再返回其内部所有class包含red的节点：
+var reds = document.getElementById('test-div').getElementsByClassName('red');
+
+// 获取节点test下的所有直属子节点:
+var cs = test.children;
+
+// 获取节点test下第一个、最后一个子节点：
+var first = test.firstElementChild;
+var last = test.lastElementChild;
+</code></pre><p>第二种方法是使用<code>querySelector()</code>和<code>querySelectorAll()</code>，需要了解selector语法，然后使用条件来获取节点，更加方便：</p>
+<pre><code>// 通过querySelector获取ID为q1的节点：
+var q1 = document.querySelector('#q1');
+
+// 通过querySelectorAll获取q1节点内的符合条件的所有节点：
+var ps = q1.querySelectorAll('div.highlighted &gt; p');
+</code></pre><p>注意：低版本的IE&lt;8不支持<code>querySelector</code>和<code>querySelectorAll</code>。IE8仅有限支持。</p>
+<p>严格地讲，我们这里的DOM节点是指<code>Element</code>，但是DOM节点实际上是<code>Node</code>，在HTML中，<code>Node</code>包括<code>Element</code>、<code>Comment</code>、<code>CDATA_SECTION</code>等很多种，以及根节点<code>Document</code>类型，但是，绝大多数时候我们只关心<code>Element</code>，也就是实际控制页面结构的<code>Node</code>，其他类型的<code>Node</code>忽略即可。根节点<code>Document</code>已经自动绑定为全局变量<code>document</code>。</p>
+<h3 id="-">练习</h3>
+<p>如下的HTML结构：</p>
+<div id="test-div">
+<div class="c-red">
+<p id="test-p">JavaScript</p>
+<p>Java</p>
+</div>
+<div class="c-red c-green">
+<p>Python</p>
+<p>Ruby</p>
+<p>Swift</p>
+</div>
+<div class="c-green">
+<p>Scheme</p>
+<p>Haskell</p>
+</div>
+</div>
+<pre><code>&lt;!-- HTML结构 --&gt;
+&lt;div id="test-div"&gt;
+&lt;div class="c-red"&gt;
+    &lt;p id="test-p"&gt;JavaScript&lt;/p&gt;
+    &lt;p&gt;Java&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="c-red c-green"&gt;
+    &lt;p&gt;Python&lt;/p&gt;
+    &lt;p&gt;Ruby&lt;/p&gt;
+    &lt;p&gt;Swift&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="c-green"&gt;
+    &lt;p&gt;Scheme&lt;/p&gt;
+    &lt;p&gt;Haskell&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>请选择出指定条件的节点：</p>
+<pre class="x-javascript">
+'use strict';
+----
+// 选择&lt;p&gt;JavaScript&lt;/p&gt;:
+var js = ???;
+
+// 选择&lt;p&gt;Python&lt;/p&gt;,&lt;p&gt;Ruby&lt;/p&gt;,&lt;p&gt;Swift&lt;/p&gt;:
+var arr = ???;
+
+// 选择&lt;p&gt;Haskell&lt;/p&gt;:
+var haskell = ???;
+----
+// 测试:
+if (!js || js.innerText !== 'JavaScript') {
+    alert('选择JavaScript失败!');
+} else if (!arr || arr.length !== 3 || !arr[0] || !arr[1] || !arr[2] || arr[0].innerText !== 'Python' || arr[1].innerText !== 'Ruby' || arr[2].innerText !== 'Swift') {
+    alert('选择Python,Ruby,Swift失败!');
+} else if (!haskell || haskell.innerText !== 'Haskell') {
+    alert('选择Haskell失败!');
+} else {
+    alert('测试通过!');
+}
+</pre>
+</div>
+<hr/>
+<div class="uk-clearfix uk-margin-left uk-margin-right" id="x-wiki-prev-next">
+</div>
+
+
+
+
+
+
+<div id="x-comment-area"></div>
+</div>
+<div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="uk-grid">
+<div class="x-body-after uk-width-1-1">
+</div>
+</div>
+</div>
+</div>
+<div class="uk-offcanvas" id="x-offcanvas-left">
+<div class="uk-offcanvas-bar">
+<div class="uk-panel">
+<ul class="uk-nav uk-nav-side">
+<li class="uk-nav-header">Index</li>
+</ul>
+<ul class="uk-nav uk-nav-side">
+<li id="off-001434446689867b27157e896e74d51a89c25cc8b43bdb3000"><a href="../001434446689867b27157e896e74d51a89c25cc8b43bdb3000.html">JavaScript教程</a></li>
+<li id="off-0014344991049250a2c80ec84cb4861bbd1d9b2c0c2850e000" style="margin-left:1em;">
+<a href="0014344991049250a2c80ec84cb4861bbd1d9b2c0c2850e000.html">JavaScript简介</a>
+</li>
+<li id="off-00143449917624134f5c4695b524e81a581ab5a222b05ec000" style="margin-left:1em;">
+<a href="00143449917624134f5c4695b524e81a581ab5a222b05ec000.html">快速入门</a>
+</li>
+<li id="off-00143470025281435e4e03117a74438aaf98c4f7b30b307000" style="margin-left:2em;">
+<a href="00143470025281435e4e03117a74438aaf98c4f7b30b307000.html">基本语法</a>
+</li>
+<li id="off-001434499190108eec0bdf14e704a09935cd112e501e31a000" style="margin-left:2em;">
+<a href="001434499190108eec0bdf14e704a09935cd112e501e31a000.html">数据类型和变量</a>
+</li>
+<li id="off-001434499203693072018f8878842a9b0011e3ff4e38b6b000" style="margin-left:2em;">
+<a href="001434499203693072018f8878842a9b0011e3ff4e38b6b000.html">字符串</a>
+</li>
+<li id="off-00143449921138898cdeb7fc2214dc08c6c67827758cd2f000" style="margin-left:2em;">
+<a href="00143449921138898cdeb7fc2214dc08c6c67827758cd2f000.html">数组</a>
+</li>
+<li id="off-00143449922400335c44d4b8c904ff29a78fd4334347131000" style="margin-left:2em;">
+<a href="00143449922400335c44d4b8c904ff29a78fd4334347131000.html">对象</a>
+</li>
+<li id="off-0014345005693811782d9e338994ec19aa1c5325824bc15000" style="margin-left:2em;">
+<a href="0014345005693811782d9e338994ec19aa1c5325824bc15000.html">条件判断</a>
+</li>
+<li id="off-001434500620831b2aeb535f5e245c788493e9f4ff416c0000" style="margin-left:2em;">
+<a href="001434500620831b2aeb535f5e245c788493e9f4ff416c0000.html">循环</a>
+</li>
+<li id="off-0014345007434430758e3ac6e1b44b1865178e7aff9082e000" style="margin-left:2em;">
+<a href="0014345007434430758e3ac6e1b44b1865178e7aff9082e000.html">Map和Set</a>
+</li>
+<li id="off-00143450082788640f82a480be8481a8ce8272951a40970000" style="margin-left:2em;">
+<a href="00143450082788640f82a480be8481a8ce8272951a40970000.html">iterable</a>
+</li>
+<li id="off-0014344992519683bcfa2e33760462fb5db8eb9430924be000" style="margin-left:1em;">
+<a href="0014344992519683bcfa2e33760462fb5db8eb9430924be000.html">函数</a>
+</li>
+<li id="off-00143449926746982f181557d9b423f819e89709feabdb4000" style="margin-left:2em;">
+<a href="00143449926746982f181557d9b423f819e89709feabdb4000.html">函数定义和调用</a>
+</li>
+<li id="off-0014344993159773a464f34e1724700a6d5dd9e235ceb7c000" style="margin-left:2em;">
+<a href="0014344993159773a464f34e1724700a6d5dd9e235ceb7c000.html">变量作用域</a>
+</li>
+<li id="off-0014345005399057070809cfaa347dfb7207900cfd116fb000" style="margin-left:2em;">
+<a href="0014345005399057070809cfaa347dfb7207900cfd116fb000.html">方法</a>
+</li>
+<li id="off-001434499355829ead974e550644e2ebd9fd8bb1b0dd721000" style="margin-left:2em;">
+<a href="001434499355829ead974e550644e2ebd9fd8bb1b0dd721000.html">高阶函数</a>
+</li>
+<li id="off-001435119854495d29b9b3d7028477a96ed74db95032675000" style="margin-left:3em;">
+<a href="001435119854495d29b9b3d7028477a96ed74db95032675000.html">map/reduce</a>
+</li>
+<li id="off-0014351219769203e3fbe1ed611475db3d439393add8997000" style="margin-left:3em;">
+<a href="0014351219769203e3fbe1ed611475db3d439393add8997000.html">filter</a>
+</li>
+<li id="off-0014351226817991a9c08f1ec0a45c99b9209bcfc71b8f6000" style="margin-left:3em;">
+<a href="0014351226817991a9c08f1ec0a45c99b9209bcfc71b8f6000.html">sort</a>
+</li>
+<li id="off-00143449934543461c9d5dfeeb848f5b72bd012e1113d15000" style="margin-left:2em;">
+<a href="00143449934543461c9d5dfeeb848f5b72bd012e1113d15000.html">闭包</a>
+</li>
+<li id="off-001438565969057627e5435793645b7acaee3b6869d1374000" style="margin-left:2em;">
+<a href="001438565969057627e5435793645b7acaee3b6869d1374000.html">箭头函数</a>
+</li>
+<li id="off-00143450083887673122b45a4414333ac366c3c935125e7000" style="margin-left:2em;">
+<a href="00143450083887673122b45a4414333ac366c3c935125e7000.html">generator</a>
+</li>
+<li id="off-00143449957099176f55ba07b764c3daa522217d0e42643000" style="margin-left:1em;">
+<a href="00143449957099176f55ba07b764c3daa522217d0e42643000.html">标准对象</a>
+</li>
+<li id="off-001434499525761186acdd5ac3a44f8a50cc0ed8606139b000" style="margin-left:2em;">
+<a href="001434499525761186acdd5ac3a44f8a50cc0ed8606139b000.html">Date</a>
+</li>
+<li id="off-001434499503920bb7b42ff6627420da2ceae4babf6c4f2000" style="margin-left:2em;">
+<a href="001434499503920bb7b42ff6627420da2ceae4babf6c4f2000.html">RegExp</a>
+</li>
+<li id="off-001434499490767fe5a0e31e17e44b69dcd1196f7ec6fc6000" style="margin-left:2em;">
+<a href="001434499490767fe5a0e31e17e44b69dcd1196f7ec6fc6000.html">JSON</a>
+</li>
+<li id="off-001434499763408e24c210985d34edcabbca944b4239e20000" style="margin-left:1em;">
+<a href="001434499763408e24c210985d34edcabbca944b4239e20000.html">面向对象编程</a>
+</li>
+<li id="off-0014344997235247b53be560ab041a7b10360a567422a78000" style="margin-left:2em;">
+<a href="0014344997235247b53be560ab041a7b10360a567422a78000.html">创建对象</a>
+</li>
+<li id="off-0014344997013405abfb7f0e1904a04ba6898a384b1e925000" style="margin-left:2em;">
+<a href="0014344997013405abfb7f0e1904a04ba6898a384b1e925000.html">原型继承</a>
+</li>
+<li id="off-001458267339633fd3a83c597d04b5fb59f7d1f6792efb3000" style="margin-left:2em;">
+<a href="001458267339633fd3a83c597d04b5fb59f7d1f6792efb3000.html">class继承</a>
+</li>
+<li id="off-0014344997647015f03abc1bb5f46129a7526292a12ab26000" style="margin-left:1em;">
+<a href="0014344997647015f03abc1bb5f46129a7526292a12ab26000.html">浏览器</a>
+</li>
+<li id="off-001434499832124d97d77b00706461f9daf1a390b75ade1000" style="margin-left:2em;">
+<a href="001434499832124d97d77b00706461f9daf1a390b75ade1000.html">浏览器对象</a>
+</li>
+<li id="off-001434499851683f7f8d6b7717343248a75d5e7f930def4000" style="margin-left:2em;">
+<a href="001434499851683f7f8d6b7717343248a75d5e7f930def4000.html">操作DOM</a>
+</li>
+<li id="off-0014345011220342fa37b4a62ea4972bf9e6da10edc2a85000" style="margin-left:3em;">
+<a href="0014345011220342fa37b4a62ea4972bf9e6da10edc2a85000.html">更新DOM</a>
+</li>
+<li id="off-0014359940861047248456754f44e55919fe9370c723ae6000" style="margin-left:3em;">
+<a href="0014359940861047248456754f44e55919fe9370c723ae6000.html">插入DOM</a>
+</li>
+<li id="off-001435997163473d309006809fa43abbba322be3eb090a8000" style="margin-left:3em;">
+<a href="001435997163473d309006809fa43abbba322be3eb090a8000.html">删除DOM</a>
+</li>
+<li id="off-001434499922277b890fd537901490a84fc24b2b8b8867e000" style="margin-left:2em;">
+<a href="001434499922277b890fd537901490a84fc24b2b8b8867e000.html">操作表单</a>
+</li>
+<li id="off-00143449993875172bbfac4b9764e2d9e2b5a17c706b3db000" style="margin-left:2em;">
+<a href="00143449993875172bbfac4b9764e2d9e2b5a17c706b3db000.html">操作文件</a>
+</li>
+<li id="off-001434499861493e7c35be5e0864769a2c06afb4754acc6000" style="margin-left:2em;">
+<a href="001434499861493e7c35be5e0864769a2c06afb4754acc6000.html">AJAX</a>
+</li>
+<li id="off-0014345008539155e93fc16046d4bb7854943814c4f9dc2000" style="margin-left:2em;">
+<a href="0014345008539155e93fc16046d4bb7854943814c4f9dc2000.html">Promise</a>
+</li>
+<li id="off-00143449990549914b596ac1da54a228a6fa9643e88bc0c000" style="margin-left:2em;">
+<a href="00143449990549914b596ac1da54a228a6fa9643e88bc0c000.html">Canvas</a>
+</li>
+<li id="off-001434499993118b8173572625b4afe93a8b19dd707ea1d000" style="margin-left:1em;">
+<a href="001434499993118b8173572625b4afe93a8b19dd707ea1d000.html">jQuery</a>
+</li>
+<li id="off-0014345004443979a29e0e0be054e75a652613f132f7f0b000" style="margin-left:2em;">
+<a href="0014345004443979a29e0e0be054e75a652613f132f7f0b000.html">选择器</a>
+</li>
+<li id="off-001437023139167510b90eb2c924f72aeba0db592a9eb54000" style="margin-left:3em;">
+<a href="001437023139167510b90eb2c924f72aeba0db592a9eb54000.html">层级选择器</a>
+</li>
+<li id="off-0014370268753868fc999e1563341fcb9df078b160a20e5000" style="margin-left:3em;">
+<a href="0014370268753868fc999e1563341fcb9df078b160a20e5000.html">查找和过滤</a>
+</li>
+<li id="off-001434500494451273e6b3dec9d411d9ba841dee8caec45000" style="margin-left:2em;">
+<a href="001434500494451273e6b3dec9d411d9ba841dee8caec45000.html">操作DOM</a>
+</li>
+<li id="off-001437110841551950380fdc17c4abdaebd38363dbe2348000" style="margin-left:3em;">
+<a href="001437110841551950380fdc17c4abdaebd38363dbe2348000.html">修改DOM结构</a>
+</li>
+<li id="off-00143564690172894383ccd7ab64669b4971f4b03fa342d000" style="margin-left:2em;">
+<a href="00143564690172894383ccd7ab64669b4971f4b03fa342d000.html">事件</a>
+</li>
+<li id="off-001434500456006abd6381dc3bb439d932cb895b62d9eee000" style="margin-left:2em;">
+<a href="001434500456006abd6381dc3bb439d932cb895b62d9eee000.html">动画</a>
+</li>
+<li id="off-00143450046645491e306a4f74746daaef4d172f66335b5000" style="margin-left:2em;">
+<a href="00143450046645491e306a4f74746daaef4d172f66335b5000.html">AJAX</a>
+</li>
+<li id="off-0014356468967974219593d94f64d06b370c87fc38eade4000" style="margin-left:2em;">
+<a href="0014356468967974219593d94f64d06b370c87fc38eade4000.html">扩展</a>
+</li>
+<li id="off-001450370530539bc6e0e3dc02c4d3bb79993a8cde056b5000" style="margin-left:1em;">
+<a href="001450370530539bc6e0e3dc02c4d3bb79993a8cde056b5000.html">underscore</a>
+</li>
+<li id="off-001450372452505599881a3debd4becbe1591a94950fbb8000" style="margin-left:2em;">
+<a href="001450372452505599881a3debd4becbe1591a94950fbb8000.html">Collections</a>
+</li>
+<li id="off-001450375778335b78230044e114619bb4211c3769897a7000" style="margin-left:2em;">
+<a href="001450375778335b78230044e114619bb4211c3769897a7000.html">Arrays</a>
+</li>
+<li id="off-001450391119558965d1614860145b881340e490534c5c3000" style="margin-left:2em;">
+<a href="001450391119558965d1614860145b881340e490534c5c3000.html">Functions</a>
+</li>
+<li id="off-0014504059891467b6dacbe5960461983d2c0a8d423d037000" style="margin-left:2em;">
+<a href="0014504059891467b6dacbe5960461983d2c0a8d423d037000.html">Objects</a>
+</li>
+<li id="off-001450409116077b5e000f9cb57448785b181b0939caecd000" style="margin-left:2em;">
+<a href="001450409116077b5e000f9cb57448785b181b0939caecd000.html">Chaining</a>
+</li>
+<li id="off-001434501245426ad4b91f2b880464ba876a8e3043fc8ef000" style="margin-left:1em;">
+<a href="001434501245426ad4b91f2b880464ba876a8e3043fc8ef000.html">Node.js</a>
+</li>
+<li id="off-00143450141843488beddae2a1044cab5acb5125baf0882000" style="margin-left:2em;">
+<a href="00143450141843488beddae2a1044cab5acb5125baf0882000.html">安装Node.js和npm</a>
+</li>
+<li id="off-001434501436552e03ec6cc152b4c84959f14d0ea278488000" style="margin-left:2em;">
+<a href="001434501436552e03ec6cc152b4c84959f14d0ea278488000.html">第一个Node程序</a>
+</li>
+<li id="off-001470969077294a6455fc9cd1f48b69f82cd05e7fa9b40000" style="margin-left:2em;">
+<a href="001470969077294a6455fc9cd1f48b69f82cd05e7fa9b40000.html">搭建Node开发环境</a>
+</li>
+<li id="off-001434502419592fd80bbb0613a42118ccab9435af408fd000" style="margin-left:2em;">
+<a href="001434502419592fd80bbb0613a42118ccab9435af408fd000.html">模块</a>
+</li>
+<li id="off-001434501482448f6b36071ab6949d3a7ecb5a71a3c9df9000" style="margin-left:2em;">
+<a href="001434501482448f6b36071ab6949d3a7ecb5a71a3c9df9000.html">基本模块</a>
+</li>
+<li id="off-001434501497361a4e77c055f5c4a8da2d5a1868df36ad1000" style="margin-left:3em;">
+<a href="001434501497361a4e77c055f5c4a8da2d5a1868df36ad1000.html">fs</a>
+</li>
+<li id="off-001434501515527e6fce6d5ec4b4fd9b572122cd1ec8ded000" style="margin-left:3em;">
+<a href="001434501515527e6fce6d5ec4b4fd9b572122cd1ec8ded000.html">stream</a>
+</li>
+<li id="off-0014345015296018cac40c198b543fead5c549865b9bd4a000" style="margin-left:3em;">
+<a href="0014345015296018cac40c198b543fead5c549865b9bd4a000.html">http</a>
+</li>
+<li id="off-001434501504929883d11d84a1541c6907eefd792c0da51000" style="margin-left:3em;">
+<a href="001434501504929883d11d84a1541c6907eefd792c0da51000.html">crypto</a>
+</li>
+<li id="off-001434501549492cdf5d4013db14fa9ad8ca172f0664345000" style="margin-left:2em;">
+<a href="001434501549492cdf5d4013db14fa9ad8ca172f0664345000.html">Web开发</a>
+</li>
+<li id="off-001434501579966ab03decb0dd246e1a6799dd653a15e1b000" style="margin-left:3em;">
+<a href="001434501579966ab03decb0dd246e1a6799dd653a15e1b000.html">koa</a>
+</li>
+<li id="off-001471087582981d6c0ea265bf241b59a04fa6f61d767f6000" style="margin-left:4em;">
+<a href="001471087582981d6c0ea265bf241b59a04fa6f61d767f6000.html">koa入门</a>
+</li>
+<li id="off-001471133885340dad9058705804899b1cc2d0a10e7dc80000" style="margin-left:4em;">
+<a href="001471133885340dad9058705804899b1cc2d0a10e7dc80000.html">处理URL</a>
+</li>
+<li id="off-0014713964925087c29166d8c344a949364e40e2f28dc09000" style="margin-left:4em;">
+<a href="0014713964925087c29166d8c344a949364e40e2f28dc09000.html">使用Nunjucks</a>
+</li>
+<li id="off-001434501628911140e1cb6ce7d42e5af81480f7ecd5802000" style="margin-left:4em;">
+<a href="001434501628911140e1cb6ce7d42e5af81480f7ecd5802000.html">使用MVC</a>
+</li>
+<li id="off-00143450161807565b0c93cb65d4df0a733bf15dc1f8c79000" style="margin-left:3em;">
+<a href="00143450161807565b0c93cb65d4df0a733bf15dc1f8c79000.html">mysql</a>
+</li>
+<li id="off-001471955049232be7492e76f514d45a2180e2c224eb7a6000" style="margin-left:4em;">
+<a href="001471955049232be7492e76f514d45a2180e2c224eb7a6000.html">使用Sequelize</a>
+</li>
+<li id="off-001472286125147031e735933574ae099842afd31be80d1000" style="margin-left:4em;">
+<a href="001472286125147031e735933574ae099842afd31be80d1000.html">建立Model</a>
+</li>
+<li id="off-00147203593334596b366f3fe0b409fbc30ad81a0a91c4a000" style="margin-left:3em;">
+<a href="00147203593334596b366f3fe0b409fbc30ad81a0a91c4a000.html">mocha</a>
+</li>
+<li id="off-00147204317563462840426beb04a849ba813eb46bb347c000" style="margin-left:4em;">
+<a href="00147204317563462840426beb04a849ba813eb46bb347c000.html">编写测试</a>
+</li>
+<li id="off-0014723007105817ff3d8fae5b9491a88982aa1655e66be000" style="margin-left:4em;">
+<a href="0014723007105817ff3d8fae5b9491a88982aa1655e66be000.html">异步测试</a>
+</li>
+<li id="off-001472780997905c8f293615c5a42eab058b6dc29936a5c000" style="margin-left:3em;">
+<a href="001472780997905c8f293615c5a42eab058b6dc29936a5c000.html">WebSocket</a>
+</li>
+<li id="off-0014727922914053479c966220f47da91991fa9c27ac3ea000" style="margin-left:4em;">
+<a href="0014727922914053479c966220f47da91991fa9c27ac3ea000.html">使用ws</a>
+</li>
+<li id="off-001472794708264206fcf1589bb43caa0395752aa26538c000" style="margin-left:4em;">
+<a href="001472794708264206fcf1589bb43caa0395752aa26538c000.html">编写聊天室</a>
+</li>
+<li id="off-001473590199114b8523ba038dd4359a16ad0bbd3c8a1f2000" style="margin-left:3em;">
+<a href="001473590199114b8523ba038dd4359a16ad0bbd3c8a1f2000.html">REST</a>
+</li>
+<li id="off-0014735914606943e2866257aa644b4bdfe01d26d29960b000" style="margin-left:4em;">
+<a href="0014735914606943e2866257aa644b4bdfe01d26d29960b000.html">编写REST API</a>
+</li>
+<li id="off-0014735944539193ab2edd2740f44a79efb438a05e83727000" style="margin-left:4em;">
+<a href="0014735944539193ab2edd2740f44a79efb438a05e83727000.html">开发REST API</a>
+</li>
+<li id="off-001475449022563a6591e6373324d1abd93e0e3fa04397f000" style="margin-left:3em;">
+<a href="001475449022563a6591e6373324d1abd93e0e3fa04397f000.html">MVVM</a>
+</li>
+<li id="off-0014757105098309140e608db714251bf071db711a9d183000" style="margin-left:4em;">
+<a href="0014757105098309140e608db714251bf071db711a9d183000.html">单向绑定</a>
+</li>
+<li id="off-00147574857851718682c42639f466a934ad9d4f485d1f2000" style="margin-left:4em;">
+<a href="00147574857851718682c42639f466a934ad9d4f485d1f2000.html">双向绑定</a>
+</li>
+<li id="off-0014757513445737513d7d65cd64333b5b6ba772839e401000" style="margin-left:4em;">
+<a href="0014757513445737513d7d65cd64333b5b6ba772839e401000.html">同步DOM结构</a>
+</li>
+<li id="off-00147576011615487c65971b3bd4acfa8ee94baaab3dbf7000" style="margin-left:4em;">
+<a href="00147576011615487c65971b3bd4acfa8ee94baaab3dbf7000.html">集成API</a>
+</li>
+<li id="off-0014757971662334e405bae72894f5c88a4bc75d01406da000" style="margin-left:4em;">
+<a href="0014757971662334e405bae72894f5c88a4bc75d01406da000.html">在线电子表格</a>
+</li>
+<li id="off-001434502089103cfd7d8160b6341d280499f541f430b64000" style="margin-left:2em;">
+<a href="001434502089103cfd7d8160b6341d280499f541f430b64000.html">自动化工具</a>
+</li>
+<li id="off-0014702883533702219013a10964054bd9a7c322b1c7e9c000" style="margin-left:1em;">
+<a href="0014702883533702219013a10964054bd9a7c322b1c7e9c000.html">React</a>
+</li>
+<li id="off-001434502446010ad7a7602d71b49c9a3a0b8484f88f2cd000" style="margin-left:1em;">
+<a href="001434502446010ad7a7602d71b49c9a3a0b8484f88f2cd000.html">期末总结</a>
+</li>
+</ul>
+<div class="x-placeholder"></div>
+</div>
+</div>
+</div>
+
+<div class="uk-modal" id="modal-signin">
+<div class="uk-modal-dialog">
+<a class="uk-modal-close uk-close"></a>
+<div class="uk-modal-header">
+<h2>Please Sign In</h2>
+</div>
+<p>You can sign in directly without register:</p>
+<h3><a href="/auth/from/weibo"><i class="uk-icon-weibo"></i> 使用新浪微博登录</a></h3>
+<p>You need authorize to allow connect to your social passport for the first time.</p>
+</div>
+</div>
+<div id="oldBrowser">
+<div class="uk-alert uk-alert-danger" data-uk-alert="">
+<a class="uk-alert-close uk-close" href="#0"></a>
+<p>
+                WARNING: You are using an old browser that does not support HTML5.
+                Please choose a modern browser (<a href="http://www.google.com/chrome" target="_blank">Chrome</a> / <a href="http://www.mozilla.org/firefox/" target="_blank">Firefox</a> / <a href="http://www.apple.com/safari/" target="_blank">Sarafi</a>) to get a good experience.
+            </p>
+</div>
+</div>
+</body>
+</html>

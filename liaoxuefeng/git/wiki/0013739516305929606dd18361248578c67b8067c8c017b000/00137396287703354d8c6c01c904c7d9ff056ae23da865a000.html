@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html xmlns:itranswarp="http://www.itranswarp.com/" xmlns:wb="http://open.weibo.com/wb">
+<!--
+-->
+<head>
+<meta charset="utf-8"/>
+<title>安装Git - 廖雪峰的官方网站</title>
+<meta content="width=device-width" name="viewport"/>
+<meta content="javascript,node,jquery,git,python,java,sql,linux,ios,android,教程,软件,编程,开发,运维,云计算,网络,互联网" name="keywords"/>
+<meta content="研究互联网产品和技术，提供原创中文精品教程" name="description"/>
+<meta content=" /wiki/0013739516305929606dd18361248578c67b8067c8c017b000 " property="x-nav"/>
+<link href="/feed" rel="alternate" title="廖雪峰的官方网站" type="application/rss+xml"/>
+<meta content="article" property="og:type"/>
+<meta content="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137396287703354d8c6c01c904c7d9ff056ae23da865a000" property="og:url"/>
+<meta content="安装Git" property="og:title"/>
+<meta content="史上最浅显易懂的Git教程" property="og:description"/>
+<meta content="http://www.liaoxuefeng.com/files/attachments/001385348516246a18bd54b498f4c74b694624d67f02fa9000/l" property="og:image"/>
+<!-- BEGIN CSS COMPRESS -->
+<link href="../../static/themes/default/css/codemirror.css" rel="stylesheet"/>
+<link href="../../static/themes/default/css/highlight.css" rel="stylesheet"/>
+<link href="../../static/themes/default/css/itranswarp.css" rel="stylesheet"/>
+<!-- END CSS COMPRESS -->
+<!--[if lt IE 9]>
+    <link rel="stylesheet" href="/static/themes/default/css/ie.css" />
+    <![endif]-->
+
+
+
+
+
+<style id="x-doc-style">
+
+        .x-display-if-signin { display: none; }
+
+    </style>
+
+<style>
+.x-wiki-visible {
+    display: block;
+}
+</style>
+
+<style>
+.x-center {
+    margin: 0;
+}
+
+
+.x-center {
+    margin-left: 316px;
+    padding-left: 15px;
+}
+
+
+
+
+</style>
+<!-- BEGIN custom_header -->
+
+
+
+
+
+
+
+
+
+
+<!-- END custom_header -->
+</head>
+<body>
+<div class="x-goto-top">
+<div class="x-arrow"></div>
+<div class="x-stick"></div>
+</div>
+<!-- // header -->
+<div id="main">
+
+
+<div class="uk-container x-container">
+<div class="uk-grid">
+<div class="x-body-before uk-width-1-1">
+</div>
+</div>
+<div class="uk-grid">
+<div class="uk-width-1-1">
+<div class="x-sidebar-left">
+<div class="x-sidebar-left-top">
+</div>
+<div class="x-sidebar-left-content">
+<ul class="uk-nav uk-nav-side">
+<li class="uk-nav-header">Index</li>
+</ul>
+<ul class="uk-nav uk-nav-side" style="margin-right:-15px;">
+<li id="0013739516305929606dd18361248578c67b8067c8c017b000"><a href="../0013739516305929606dd18361248578c67b8067c8c017b000.html">Git教程</a></li>
+<li id="001373962845513aefd77a99f4145f0a2c7a7ca057e7570000" style="margin-left:1em;">
+<a href="001373962845513aefd77a99f4145f0a2c7a7ca057e7570000.html">Git简介</a>
+</li>
+<li id="00137402760310626208b4f695940a49e5348b689d095fc000" style="margin-left:2em;">
+<a href="00137402760310626208b4f695940a49e5348b689d095fc000.html">Git的诞生</a>
+</li>
+<li id="001374027586935cf69c53637d8458c9aec27dd546a6cd6000" style="margin-left:2em;">
+<a href="001374027586935cf69c53637d8458c9aec27dd546a6cd6000.html">集中式vs分布式</a>
+</li>
+<li id="00137396287703354d8c6c01c904c7d9ff056ae23da865a000" style="margin-left:1em;">
+<a href="00137396287703354d8c6c01c904c7d9ff056ae23da865a000.html">安装Git</a>
+</li>
+<li id="0013743256916071d599b3aed534aaab22a0db6c4e07fd0000" style="margin-left:1em;">
+<a href="0013743256916071d599b3aed534aaab22a0db6c4e07fd0000.html">创建版本库</a>
+</li>
+<li id="0013743858312764dca7ad6d0754f76aa562e3789478044000" style="margin-left:1em;">
+<a href="0013743858312764dca7ad6d0754f76aa562e3789478044000.html">时光机穿梭</a>
+</li>
+<li id="0013744142037508cf42e51debf49668810645e02887691000" style="margin-left:2em;">
+<a href="0013744142037508cf42e51debf49668810645e02887691000.html">版本回退</a>
+</li>
+<li id="0013745374151782eb658c5a5ca454eaa451661275886c6000" style="margin-left:2em;">
+<a href="0013745374151782eb658c5a5ca454eaa451661275886c6000.html">工作区和暂存区</a>
+</li>
+<li id="001374829472990293f16b45df14f35b94b3e8a026220c5000" style="margin-left:2em;">
+<a href="001374829472990293f16b45df14f35b94b3e8a026220c5000.html">管理修改</a>
+</li>
+<li id="001374831943254ee90db11b13d4ba9a73b9047f4fb968d000" style="margin-left:2em;">
+<a href="001374831943254ee90db11b13d4ba9a73b9047f4fb968d000.html">撤销修改</a>
+</li>
+<li id="0013758392816224cafd33c44b4451887cc941e6716805c000" style="margin-left:2em;">
+<a href="0013758392816224cafd33c44b4451887cc941e6716805c000.html">删除文件</a>
+</li>
+<li id="001374385852170d9c7adf13c30429b9660d0eb689dd43a000" style="margin-left:1em;">
+<a href="001374385852170d9c7adf13c30429b9660d0eb689dd43a000.html">远程仓库</a>
+</li>
+<li id="0013752340242354807e192f02a44359908df8a5643103a000" style="margin-left:2em;">
+<a href="0013752340242354807e192f02a44359908df8a5643103a000.html">添加远程库</a>
+</li>
+<li id="001375233990231ac8cf32ef1b24887a5209f83e01cb94b000" style="margin-left:2em;">
+<a href="001375233990231ac8cf32ef1b24887a5209f83e01cb94b000.html">从远程库克隆</a>
+</li>
+<li id="0013743862006503a1c5bf5a783434581661a3cc2084efa000" style="margin-left:1em;">
+<a href="0013743862006503a1c5bf5a783434581661a3cc2084efa000.html">分支管理</a>
+</li>
+<li id="001375840038939c291467cc7c747b1810aab2fb8863508000" style="margin-left:2em;">
+<a href="001375840038939c291467cc7c747b1810aab2fb8863508000.html">创建与合并分支</a>
+</li>
+<li id="001375840202368c74be33fbd884e71b570f2cc3c0d1dcf000" style="margin-left:2em;">
+<a href="001375840202368c74be33fbd884e71b570f2cc3c0d1dcf000.html">解决冲突</a>
+</li>
+<li id="0013758410364457b9e3d821f4244beb0fd69c61a185ae0000" style="margin-left:2em;">
+<a href="0013758410364457b9e3d821f4244beb0fd69c61a185ae0000.html">分支管理策略</a>
+</li>
+<li id="00137602359178794d966923e5c4134bc8bf98dfb03aea3000" style="margin-left:2em;">
+<a href="00137602359178794d966923e5c4134bc8bf98dfb03aea3000.html">Bug分支</a>
+</li>
+<li id="001376026233004c47f22a16d1f4fa289ce45f14bbc8f11000" style="margin-left:2em;">
+<a href="001376026233004c47f22a16d1f4fa289ce45f14bbc8f11000.html">Feature分支</a>
+</li>
+<li id="0013760174128707b935b0be6fc4fc6ace66c4f15618f8d000" style="margin-left:2em;">
+<a href="0013760174128707b935b0be6fc4fc6ace66c4f15618f8d000.html">多人协作</a>
+</li>
+<li id="0013762144381812a168659b3dd4610b4229d81de5056cc000" style="margin-left:1em;">
+<a href="0013762144381812a168659b3dd4610b4229d81de5056cc000.html">标签管理</a>
+</li>
+<li id="001376951758572072ce1dc172b4178b910d31bc7521ee4000" style="margin-left:2em;">
+<a href="001376951758572072ce1dc172b4178b910d31bc7521ee4000.html">创建标签</a>
+</li>
+<li id="001376951885068a0ac7d81c3a64912b35a59b58a1d926b000" style="margin-left:2em;">
+<a href="001376951885068a0ac7d81c3a64912b35a59b58a1d926b000.html">操作标签</a>
+</li>
+<li id="00137628548491051ccfaef0ccb470894c858999603fedf000" style="margin-left:1em;">
+<a href="00137628548491051ccfaef0ccb470894c858999603fedf000.html">使用GitHub</a>
+</li>
+<li id="00137621280731812dec22ecc9b44f4b2ca1c680f181a5b000" style="margin-left:1em;">
+<a href="00137621280731812dec22ecc9b44f4b2ca1c680f181a5b000.html">自定义Git</a>
+</li>
+<li id="0013758404317281e54b6f5375640abbb11e67be4cd49e0000" style="margin-left:2em;">
+<a href="0013758404317281e54b6f5375640abbb11e67be4cd49e0000.html">忽略特殊文件</a>
+</li>
+<li id="001375234012342f90be1fc4d81446c967bbdc19e7c03d3000" style="margin-left:2em;">
+<a href="001375234012342f90be1fc4d81446c967bbdc19e7c03d3000.html">配置别名</a>
+</li>
+<li id="00137583770360579bc4b458f044ce7afed3df579123eca000" style="margin-left:2em;">
+<a href="00137583770360579bc4b458f044ce7afed3df579123eca000.html">搭建Git服务器</a>
+</li>
+<li id="00137586810169600f39e17409a4358b1ac0d3621356287000" style="margin-left:1em;">
+<a href="00137586810169600f39e17409a4358b1ac0d3621356287000.html">期末总结</a>
+</li>
+</ul>
+<div class="x-placeholder"></div>
+</div>
+<div class="x-sidebar-left-bottom">
+<h3>关于作者</h3>
+<iframe class="share_self" frameborder="0" height="90" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&amp;width=0&amp;height=550&amp;fansRow=2&amp;ptype=1&amp;speed=0&amp;skin=5&amp;isTitle=0&amp;noborder=0&amp;isWeibo=0&amp;isFans=0&amp;uid=1658384301&amp;verifier=078cedea&amp;colors=0593d3,ffffff,666666,0593d3,0477ab&amp;dpc=1" width="100%"></iframe>
+<div class="x-promo-b" style="width:100%;overflow-x:hidden;margin-bottom:5px"></div>
+<div style="width:100%;overflow-x:hidden;">
+
+<!-- 300x600-lxf -->
+
+
+</div>
+<div style="width:100%;overflow-x:hidden;">
+
+
+</div>
+</div>
+</div>
+<div class="x-center">
+<div>
+</div>
+<div class="x-content" style="width:100%">
+<h4>安装Git</h4>
+
+<hr/>
+<div class="x-wiki-content">
+<p>最早Git是在Linux上开发的，很长一段时间内，Git也只能在Linux和Unix系统上跑。不过，慢慢地有人把它移植到了Windows上。现在，Git可以在Linux、Unix、Mac和Windows这几大平台上正常运行了。</p>
+<p>要使用Git，第一步当然是安装Git了。根据你当前使用的平台来阅读下面的文字：</p>
+<h3 id="-linux-git">在Linux上安装Git</h3>
+<p>首先，你可以试着输入<code>git</code>，看看系统有没有安装Git：</p>
+<pre><code>$ git
+The program 'git' is currently not installed. You can install it by typing:
+sudo apt-get install git
+</code></pre><p>像上面的命令，有很多Linux会友好地告诉你Git没有安装，还会告诉你如何安装Git。</p>
+<p>如果你碰巧用Debian或Ubuntu Linux，通过一条<code>sudo apt-get install git</code>就可以直接完成Git的安装，非常简单。</p>
+<video controls="" height="478" width="638">
+<source src="http://michaelliao.gitcafe.io/video/git-apt-install.mp4">
+<source src="http://github.liaoxuefeng.com/sinaweibopy/video/git-apt-install.mp4">
+</source></source></video>
+<p>老一点的Debian或Ubuntu Linux，要把命令改为<code>sudo apt-get install git-core</code>，因为以前有个软件也叫GIT（GNU Interactive Tools），结果Git就只能叫<code>git-core</code>了。由于Git名气实在太大，后来就把GNU Interactive Tools改成<code>gnuit</code>，<code>git-core</code>正式改为<code>git</code>。</p>
+<p>如果是其他Linux版本，可以直接通过源码安装。先从Git官网下载源码，然后解压，依次输入：<code>./config</code>，<code>make</code>，<code>sudo make install</code>这几个命令安装就好了。</p>
+<h3 id="-mac-os-x-git">在Mac OS X上安装Git</h3>
+<p>如果你正在使用Mac做开发，有两种安装Git的方法。</p>
+<p>一是安装homebrew，然后通过homebrew安装Git，具体方法请参考homebrew的文档：<a href="http://brew.sh/">http://brew.sh/</a>。</p>
+<p>第二种方法更简单，也是推荐的方法，就是直接从AppStore安装Xcode，Xcode集成了Git，不过默认没有安装，你需要运行Xcode，选择菜单“Xcode”-&gt;“Preferences”，在弹出窗口中找到“Downloads”，选择“Command Line Tools”，点“Install”就可以完成安装了。</p>
+<p><img alt="install-git-by-xcode" src="../../files/attachments/001384907061183ba2a452af9de4a8a8640339239bc3e5e000/0.png"/></p>
+<p>Xcode是Apple官方IDE，功能非常强大，是开发Mac和iOS App的必选装备，而且是免费的！</p>
+<h3 id="-windows-git">在Windows上安装Git</h3>
+<p>实话实说，Windows是最烂的开发平台，如果不是开发Windows游戏或者在IE里调试页面，一般不推荐用Windows。不过，既然已经上了微软的贼船，也是有办法安装Git的。</p>
+<p>Windows下要使用很多Linux/Unix的工具时，需要Cygwin这样的模拟环境，Git也一样。Cygwin的安装和配置都比较复杂，就不建议你折腾了。不过，有高人已经把模拟环境和Git都打包好了，名叫msysgit，只需要下载一个单独的exe安装程序，其他什么也不用装，绝对好用。</p>
+<p>msysgit是Windows版的Git，从<a href="https://git-for-windows.github.io">https://git-for-windows.github.io</a>下载（网速慢的同学请移步<a href="http://pan.baidu.com/s/1skFLrMt#path=%252Fpub%252Fgit">国内镜像</a>），然后按默认选项安装即可。</p>
+<p>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！</p>
+<p><img alt="install-git-on-windows" src="../../files/attachments/001384907073134ef6feff559cf4ce3a2c5c588d2831c0a000/0.png"/></p>
+<p>安装完成后，还需要最后一步设置，在命令行输入：</p>
+<pre><code>$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+</code></pre><p>因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。你也许会担心，如果有人故意冒充别人怎么办？这个不必担心，首先我们相信大家都是善良无知的群众，其次，真的有冒充的也是有办法可查的。</p>
+<p>注意<code>git config</code>命令的<code>--global</code>参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p>
+</div>
+<hr/>
+<div class="uk-clearfix uk-margin-left uk-margin-right" id="x-wiki-prev-next">
+</div>
+
+
+
+
+
+
+<div id="x-comment-area"></div>
+</div>
+<div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="uk-grid">
+<div class="x-body-after uk-width-1-1">
+</div>
+</div>
+</div>
+</div>
+<div class="uk-offcanvas" id="x-offcanvas-left">
+<div class="uk-offcanvas-bar">
+<div class="uk-panel">
+<ul class="uk-nav uk-nav-side">
+<li class="uk-nav-header">Index</li>
+</ul>
+<ul class="uk-nav uk-nav-side">
+<li id="off-0013739516305929606dd18361248578c67b8067c8c017b000"><a href="../0013739516305929606dd18361248578c67b8067c8c017b000.html">Git教程</a></li>
+<li id="off-001373962845513aefd77a99f4145f0a2c7a7ca057e7570000" style="margin-left:1em;">
+<a href="001373962845513aefd77a99f4145f0a2c7a7ca057e7570000.html">Git简介</a>
+</li>
+<li id="off-00137402760310626208b4f695940a49e5348b689d095fc000" style="margin-left:2em;">
+<a href="00137402760310626208b4f695940a49e5348b689d095fc000.html">Git的诞生</a>
+</li>
+<li id="off-001374027586935cf69c53637d8458c9aec27dd546a6cd6000" style="margin-left:2em;">
+<a href="001374027586935cf69c53637d8458c9aec27dd546a6cd6000.html">集中式vs分布式</a>
+</li>
+<li id="off-00137396287703354d8c6c01c904c7d9ff056ae23da865a000" style="margin-left:1em;">
+<a href="00137396287703354d8c6c01c904c7d9ff056ae23da865a000.html">安装Git</a>
+</li>
+<li id="off-0013743256916071d599b3aed534aaab22a0db6c4e07fd0000" style="margin-left:1em;">
+<a href="0013743256916071d599b3aed534aaab22a0db6c4e07fd0000.html">创建版本库</a>
+</li>
+<li id="off-0013743858312764dca7ad6d0754f76aa562e3789478044000" style="margin-left:1em;">
+<a href="0013743858312764dca7ad6d0754f76aa562e3789478044000.html">时光机穿梭</a>
+</li>
+<li id="off-0013744142037508cf42e51debf49668810645e02887691000" style="margin-left:2em;">
+<a href="0013744142037508cf42e51debf49668810645e02887691000.html">版本回退</a>
+</li>
+<li id="off-0013745374151782eb658c5a5ca454eaa451661275886c6000" style="margin-left:2em;">
+<a href="0013745374151782eb658c5a5ca454eaa451661275886c6000.html">工作区和暂存区</a>
+</li>
+<li id="off-001374829472990293f16b45df14f35b94b3e8a026220c5000" style="margin-left:2em;">
+<a href="001374829472990293f16b45df14f35b94b3e8a026220c5000.html">管理修改</a>
+</li>
+<li id="off-001374831943254ee90db11b13d4ba9a73b9047f4fb968d000" style="margin-left:2em;">
+<a href="001374831943254ee90db11b13d4ba9a73b9047f4fb968d000.html">撤销修改</a>
+</li>
+<li id="off-0013758392816224cafd33c44b4451887cc941e6716805c000" style="margin-left:2em;">
+<a href="0013758392816224cafd33c44b4451887cc941e6716805c000.html">删除文件</a>
+</li>
+<li id="off-001374385852170d9c7adf13c30429b9660d0eb689dd43a000" style="margin-left:1em;">
+<a href="001374385852170d9c7adf13c30429b9660d0eb689dd43a000.html">远程仓库</a>
+</li>
+<li id="off-0013752340242354807e192f02a44359908df8a5643103a000" style="margin-left:2em;">
+<a href="0013752340242354807e192f02a44359908df8a5643103a000.html">添加远程库</a>
+</li>
+<li id="off-001375233990231ac8cf32ef1b24887a5209f83e01cb94b000" style="margin-left:2em;">
+<a href="001375233990231ac8cf32ef1b24887a5209f83e01cb94b000.html">从远程库克隆</a>
+</li>
+<li id="off-0013743862006503a1c5bf5a783434581661a3cc2084efa000" style="margin-left:1em;">
+<a href="0013743862006503a1c5bf5a783434581661a3cc2084efa000.html">分支管理</a>
+</li>
+<li id="off-001375840038939c291467cc7c747b1810aab2fb8863508000" style="margin-left:2em;">
+<a href="001375840038939c291467cc7c747b1810aab2fb8863508000.html">创建与合并分支</a>
+</li>
+<li id="off-001375840202368c74be33fbd884e71b570f2cc3c0d1dcf000" style="margin-left:2em;">
+<a href="001375840202368c74be33fbd884e71b570f2cc3c0d1dcf000.html">解决冲突</a>
+</li>
+<li id="off-0013758410364457b9e3d821f4244beb0fd69c61a185ae0000" style="margin-left:2em;">
+<a href="0013758410364457b9e3d821f4244beb0fd69c61a185ae0000.html">分支管理策略</a>
+</li>
+<li id="off-00137602359178794d966923e5c4134bc8bf98dfb03aea3000" style="margin-left:2em;">
+<a href="00137602359178794d966923e5c4134bc8bf98dfb03aea3000.html">Bug分支</a>
+</li>
+<li id="off-001376026233004c47f22a16d1f4fa289ce45f14bbc8f11000" style="margin-left:2em;">
+<a href="001376026233004c47f22a16d1f4fa289ce45f14bbc8f11000.html">Feature分支</a>
+</li>
+<li id="off-0013760174128707b935b0be6fc4fc6ace66c4f15618f8d000" style="margin-left:2em;">
+<a href="0013760174128707b935b0be6fc4fc6ace66c4f15618f8d000.html">多人协作</a>
+</li>
+<li id="off-0013762144381812a168659b3dd4610b4229d81de5056cc000" style="margin-left:1em;">
+<a href="0013762144381812a168659b3dd4610b4229d81de5056cc000.html">标签管理</a>
+</li>
+<li id="off-001376951758572072ce1dc172b4178b910d31bc7521ee4000" style="margin-left:2em;">
+<a href="001376951758572072ce1dc172b4178b910d31bc7521ee4000.html">创建标签</a>
+</li>
+<li id="off-001376951885068a0ac7d81c3a64912b35a59b58a1d926b000" style="margin-left:2em;">
+<a href="001376951885068a0ac7d81c3a64912b35a59b58a1d926b000.html">操作标签</a>
+</li>
+<li id="off-00137628548491051ccfaef0ccb470894c858999603fedf000" style="margin-left:1em;">
+<a href="00137628548491051ccfaef0ccb470894c858999603fedf000.html">使用GitHub</a>
+</li>
+<li id="off-00137621280731812dec22ecc9b44f4b2ca1c680f181a5b000" style="margin-left:1em;">
+<a href="00137621280731812dec22ecc9b44f4b2ca1c680f181a5b000.html">自定义Git</a>
+</li>
+<li id="off-0013758404317281e54b6f5375640abbb11e67be4cd49e0000" style="margin-left:2em;">
+<a href="0013758404317281e54b6f5375640abbb11e67be4cd49e0000.html">忽略特殊文件</a>
+</li>
+<li id="off-001375234012342f90be1fc4d81446c967bbdc19e7c03d3000" style="margin-left:2em;">
+<a href="001375234012342f90be1fc4d81446c967bbdc19e7c03d3000.html">配置别名</a>
+</li>
+<li id="off-00137583770360579bc4b458f044ce7afed3df579123eca000" style="margin-left:2em;">
+<a href="00137583770360579bc4b458f044ce7afed3df579123eca000.html">搭建Git服务器</a>
+</li>
+<li id="off-00137586810169600f39e17409a4358b1ac0d3621356287000" style="margin-left:1em;">
+<a href="00137586810169600f39e17409a4358b1ac0d3621356287000.html">期末总结</a>
+</li>
+</ul>
+<div class="x-placeholder"></div>
+</div>
+</div>
+</div>
+
+<div class="uk-modal" id="modal-signin">
+<div class="uk-modal-dialog">
+<a class="uk-modal-close uk-close"></a>
+<div class="uk-modal-header">
+<h2>Please Sign In</h2>
+</div>
+<p>You can sign in directly without register:</p>
+<h3><a href="/auth/from/weibo"><i class="uk-icon-weibo"></i> 使用新浪微博登录</a></h3>
+<p>You need authorize to allow connect to your social passport for the first time.</p>
+</div>
+</div>
+<div id="oldBrowser">
+<div class="uk-alert uk-alert-danger" data-uk-alert="">
+<a class="uk-alert-close uk-close" href="#0"></a>
+<p>
+                WARNING: You are using an old browser that does not support HTML5.
+                Please choose a modern browser (<a href="http://www.google.com/chrome" target="_blank">Chrome</a> / <a href="http://www.mozilla.org/firefox/" target="_blank">Firefox</a> / <a href="http://www.apple.com/safari/" target="_blank">Sarafi</a>) to get a good experience.
+            </p>
+</div>
+</div>
+</body>
+</html>
