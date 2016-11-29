@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>git</string>
+	<string>python</string>
 	<key>CFBundleName</key>
-	<string>GitLiaoXueFeng</string>
+	<string>PythonLiaoXueFeng_zh</string>
 	<key>DocSetPlatformFamily</key>
-	<string>git</string>
+	<string>python</string>
 	<key>dashIndexFilePath</key>
-	<string>wiki/0013739516305929606dd18361248578c67b8067c8c017b000.html</string>
+	<string>wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000.html</string>
 	<key>isDashDocset</key>
 	<true/>
 </dict>

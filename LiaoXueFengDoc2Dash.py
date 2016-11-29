@@ -66,17 +66,17 @@ def create_db(doc_name, index_html_name):
     conn.close()
 
 
-copy_file("liaoxuefeng/python", "pythonliaoxuefeng.docset")
-create_xml("pythonliaoxuefeng.docset", "python", "PythonLiaoXueFeng", "python",
+copy_file("liaoxuefeng/python", "pythonliaoxuefeng_zh.docset")
+create_xml("pythonliaoxuefeng_zh.docset", "python", "PythonLiaoXueFeng_zh", "python",
            "wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000.html")
-create_db("pythonliaoxuefeng.docset", "0014316089557264a6b348958f449949df42a6d3a2e542c000.html")
+create_db("pythonliaoxuefeng_zh.docset", "0014316089557264a6b348958f449949df42a6d3a2e542c000.html")
 
-copy_file("liaoxuefeng/git", "gitliaoxuefeng.docset")
-create_xml("gitliaoxuefeng.docset", "git", "GitLiaoXueFeng", "git",
+copy_file("liaoxuefeng/git", "gitliaoxuefeng_zh.docset")
+create_xml("gitliaoxuefeng_zh.docset", "git", "GitLiaoXueFeng_zh", "git",
            "wiki/0013739516305929606dd18361248578c67b8067c8c017b000.html")
-create_db("gitliaoxuefeng.docset", "0013739516305929606dd18361248578c67b8067c8c017b000.html")
+create_db("gitliaoxuefeng_zh.docset", "0013739516305929606dd18361248578c67b8067c8c017b000.html")
 
-copy_file("liaoxuefeng/javascript", "javascriptliaoxuefeng.docset")
-create_xml("javascriptliaoxuefeng.docset", "javascript", "JavaScriptLiaoXueFeng", "javascript",
+copy_file("liaoxuefeng/javascript", "javascriptliaoxuefeng_zh.docset")
+create_xml("javascriptliaoxuefeng_zh.docset", "javascript", "JavaScriptLiaoXueFeng_zh", "javascript",
            "wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000.html")
-create_db("javascriptliaoxuefeng.docset", "001434446689867b27157e896e74d51a89c25cc8b43bdb3000.html")
+create_db("javascriptliaoxuefeng_zh.docset", "001434446689867b27157e896e74d51a89c25cc8b43bdb3000.html")
